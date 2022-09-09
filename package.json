@@ -1,0 +1,22 @@
+{
+  "name": "cypress_3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArtemKasCFC/Cypress_3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArtemKasCFC/Cypress_3/issues"
+  },
+  "homepage": "https://github.com/ArtemKasCFC/Cypress_3#readme",
+  "devDependencies": {
+    "cypress": "^10.7.0"
+  }
+}
