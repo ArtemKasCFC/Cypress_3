@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ArtemKasCFC/Cypress_3#readme",
   "devDependencies": {
-    "cypress": "^10.7.0"
+    "cypress": "^10.7.0",
+    "cypress-xpath": "^2.0.1"
   }
 }
