@@ -14,7 +14,7 @@ describe('Alias and invoke', () => {
         cy.get('.thumbnail').should('have.length', 16).eq(0).as('Product')
         cy.get('@Product').find('.productcart').should('have.attr', 'title', 'Add to Cart')
     });
-    it.only("Calculate the total price of the products", () => {
+    it("Calculate the total price of the products", () => {
         cy.visit('https://www.automationteststore.com/')
         cy.get('.thumbnail').find('.oneprice').invoke('text').as('normalPrice')
         cy.get('.thumbnail').find('.pricenew').invoke('text').as('salePrice')
