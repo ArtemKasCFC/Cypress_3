@@ -1,19 +1,24 @@
+import HomePage_PO from '../../support/pageObject/autoteststore/HomePage_PO'
+import HairCarePage_PO from '../../support/pageObject/autoteststore/HairCarePage_PO'
+
 /// <reference types="Cypress" />
 
 describe('Check adding multiple items to the basket', () => {
-    before(() =>{
+    const hairCarePage = new HairCarePage_PO()
+    const homePage = new HomePage_PO()
+    
+    before(() => {
         cy.fixture('products').then(data => {
             globalThis.data = data
         })
     })
+    
     beforeEach(() => {
-        cy.visit('https://www.automationteststore.com/')
-        cy.get('.nav-pills > :nth-child(7)').click()
+        homePage.visitHomePage()
+        homePage.selectHairCare()
     })
+    
     it("Add specific items to the basket", () => {
-         data.productName.forEach(el => {
-            cy.addToBasket(el)
-         })
-         cy.get('.cart_total').should('have.text', '$46.45')
+         hairCarePage.addToBasket(git)
     });
 })
