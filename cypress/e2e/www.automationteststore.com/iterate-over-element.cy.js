@@ -16,11 +16,6 @@ describe('Interate over elements', () => {
     });
 
     it("Add another product to the basket", () => {
-        // cy.get('.fixed_wrapper .prdocutname').each((el, i) => {
-        //     if(el.text().includes('ck IN2U Eau De Toilette Spray for Him')){
-        //         cy.wrap(el).click()
-        //     }
-        // }) 
         cy.selectProduct('Men+Care Active Clean Shower Tool')
         cy.get('.bgnone').should('have.text', "Men+Care Active Clean Shower Tool")  
     });

@@ -21,11 +21,20 @@
 // Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
 //
    Cypress.Commands.add('selectProduct', productName => {
-       cy.get('.fixed_wrapper .prdocutname').each((el, i) => {
+       cy.get('.fixed_wrapper .prdocutname').each((el) => {
            if (el.text().includes(productName)) {
                cy.wrap(el).click()
            }
        })
+   })
+
+   Cypress.Commands.add('addToBasket', productName => {
+    cy.get('.fixed_wrapper .prdocutname').each((el, ind) => {
+        if (el.text() === productName) {
+            cy.log(productName)
+            cy.get('.productcart').eq(ind).click()
+        }
+    })
    })
 
    Cypress.Commands.add('fillInAndSubmitForm', (firstname, lastname, email, comment) => {
