@@ -20,6 +20,12 @@
 // -- This is a dual command --
 // Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
 //
+// cy.visit(Cypress.env('homePageWDU'))
+// cy.get('#contact-us').invoke('removeAttr','target').click()
+   Cypress.Commands.add('contactUsPage', () => {
+       cy.visit(`${Cypress.env('homePageWDU')}/Contact-Us/contactus.html`)
+   })
+
    Cypress.Commands.add('selectProduct', productName => {
        cy.get('.fixed_wrapper .prdocutname').each((el) => {
            if (el.text().includes(productName)) {
@@ -29,12 +35,12 @@
    })
 
    Cypress.Commands.add('addToBasket', productName => {
-    cy.get('.fixed_wrapper .prdocutname').each((el, ind) => {
-        if (el.text() === productName) {
-            cy.log(productName)
-            cy.get('.productcart').eq(ind).click()
-        }
-    })
+       cy.get('.fixed_wrapper .prdocutname').each((el, ind) => {
+           if (el.text() === productName) {
+               cy.log(productName)
+               cy.get('.productcart').eq(ind).click()
+           }
+       })
    })
 
    Cypress.Commands.add('fillInAndSubmitForm', (firstname, lastname, email, comment) => {
