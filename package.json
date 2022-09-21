@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dashboard": "npx cypress run --record --key 6a7a6c8b-9b9f-42fe-9523-cc0a45cf7011",
+    "chrome": "npx cypress run --browser chrome",
+    "merge-reports": "jrm cypress/results/combined.xml \"cypress/results/junit/*.xml\"",
+    "getreport": "npx mochawesome-merge cypress/results/mochawesome/*.json > mochawesome.json && npx marge mochawesome.json",
+    "delreports": "rm -rf ^mochawesome* && rm cypress/results/mochawesome/*.json && rm cypress/results/junit/*.xml && rm cypress/results/*.xml || true",
+    "regression": "npm run delreports && npm run chrome && npm run getreport"
   },
   "repository": {
     "type": "git",
@@ -19,6 +24,13 @@
   "devDependencies": {
     "cypress": "^10.7.0",
     "cypress-file-upload": "^5.0.8",
-    "cypress-xpath": "^2.0.1"
+    "cypress-multi-reporters": "^1.6.1",
+    "cypress-xpath": "^2.0.1",
+    "junit-report-merger": "^4.0.0",
+    "mocha": "^10.0.0",
+    "mocha-junit-reporter": "^2.0.2",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.2.1",
+    "mochawesome-report-generator": "^6.2.0"
   }
 }

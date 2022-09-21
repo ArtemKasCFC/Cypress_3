@@ -19,6 +19,6 @@ describe('Check adding multiple items to the basket', () => {
     })
     
     it("Add specific items to the basket", () => {
-         hairCarePage.addToBasket(git)
+         hairCarePage.addToBasket()
     });
 })
