@@ -6,6 +6,7 @@ function getConfigurationByFile(file) {
   const pathToConfigFile = path.resolve('cypress', 'config', `${file}.json`)
   if (!fs.existsSync(pathToConfigFile)) {
     console.log('File does not exists')
+    return {}
   }
   return fs.readJson(pathToConfigFile)
 }
