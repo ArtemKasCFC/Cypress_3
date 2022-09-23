@@ -8,7 +8,7 @@ pipeline {
             steps {
                     git branch: 'main', url: "https://github.com/ArtemKasCFC/Cypress_guide.git"
                     bat 'npm install'
-                    bat 'npm run regression'
+                    bat 'npm run chrome'
                 }
         }
     }
