@@ -4,12 +4,11 @@ pipeline {
     tools{nodejs "node"}
 
     stages {
-        stage('Cypress Test Suite') {
+        stage('Cypress Tests') {
             steps {
-                    git url : 'https://github.com/ArtemKasCFC/Cypress_guide.git'
+                    git branch: 'main', url: "https://github.com/ArtemKasCFC/Cypress_guide.git"
                     bat 'npm install'
-                    bat 'npm update'
-                    bat 'npm run chrome'
+                    bat 'npm run regression'
                 }
         }
     }
