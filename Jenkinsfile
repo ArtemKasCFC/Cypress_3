@@ -8,7 +8,7 @@ pipeline {
             steps {
                     git branch: 'main', url: "https://github.com/ArtemKasCFC/Cypress_guide.git"
                     bat 'npm install'
-                    bat 'npm run chrome'
+                    bat 'npm run %Script%'
                 }
         }
     }
